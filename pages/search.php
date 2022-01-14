@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['q'])){
 	$search = $_POST['q'];
 	$stmt = "SELECT * FROM vw_blog WHERE search LIKE '%{$search}%' ORDER BY views DESC";
 	$query = $db->query($stmt);
@@ -18,3 +19,6 @@
 				<li><a href='./'>Go home</a></li>
 			</ul>	
 		</div>";
+}else{
+	echo '';
+}
