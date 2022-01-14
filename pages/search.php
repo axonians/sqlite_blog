@@ -1,6 +1,4 @@
-
 <?php
-if(isset($_POST['q'])){
 	$search = $_POST['q'];
 	$stmt = "SELECT * FROM vw_blog WHERE search LIKE '%{$search}%' ORDER BY views DESC";
 	$query = $db->query($stmt);
@@ -20,9 +18,3 @@ if(isset($_POST['q'])){
 				<li><a href='./'>Go home</a></li>
 			</ul>	
 		</div>";
-}else{
-	echo '<div style="">
-	<h1 style="color:crimson">An error has occured</h1>
-	<p><br>Go back to <a href="./">home page</a></p>
-	</div>';
-}
