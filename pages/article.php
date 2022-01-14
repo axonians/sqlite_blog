@@ -36,7 +36,7 @@ elseif($_GET['action']=='add'){
 		$category = $_POST['category'];
 		$curr_timestamp = time();
 	if(!isset($_POST['article_id'])){
-		$query = $db->prepare("INSERT INTO articles (article_title, article_content, article_timestamp, cat_id, views) VALUES (:title, :content, '{$curr_timestamp}', :category, 1)");
+		$query = $db->prepare("INSERT INTO articles (article_title, article_content, article_timestamp, cat_id, views) VALUES (:title, :content, '{$curr_timestamp}', :category, 0)");
 	}else{
 		$query = $db->prepare("UPDATE articles SET article_title = :title, article_content = :content, cat_id =:category WHERE id = '{$_POST['article_id']}'");		
 	}
