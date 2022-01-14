@@ -15,10 +15,14 @@ if(isset($_POST['q'])){
 	echo "
 	<div class='results'>{$i} result(s) found for your query</div>
 	<div class='actions'>
-			<ul>
-				<li><a href='./'>Go home</a></li>
-			</ul>	
-		</div>";
+		<ul>
+			<li><a href='./'>Go home</a></li>
+		</ul>	
+	</div>";
 }else{
-	echo '';
+	echo "<div class='actions'>
+		<ul>
+			<li><a href='./'>Go home</a></li>
+		</ul>	
+	</div>";
 }
