@@ -15,8 +15,14 @@
 		<div class="logo">
 			<a href="./">Einia Blogs</a>
 		</div>
-
-	<?php	if(!isset($_GET['do'])){
+	<?php if(!isset($_GET['do']) OR (isset($_GET['do']) AND $_GET['do']=='search')){ ?>
+		<form action='?do=search' method='POST' id='search'>
+			<input type='text' name='q' id='q' value="<?php echo isset($_POST['q'])?$_POST['q']:'' ?>">
+			<input type='submit' value='Search'>				
+		</form>
+		<div class="content_holder">
+	<?php	}
+	if(!isset($_GET['do'])){
 		if(isset($_GET['show']) AND $_GET['show']=='all'){
 			$articles = $db->query("SELECT * FROM articles ORDER BY article_timestamp DESC");
 			echo '<h3>All articles</h3>';
@@ -53,7 +59,7 @@
 			</ul>
 		</div>
 	<?php } ?>
-
+	</div>
 	</div>
 </body>
 </html>

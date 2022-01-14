@@ -12,7 +12,7 @@ if(!isset($_GET['action']) AND isset($_GET['id'])){
 		<div class="text" style="margin-block:1.25rem;"><?php echo parseMarkUp(nl2br($article['article_content'])) ?></div>
 		<div class="category"><span style='color:var(--head-color);'>Category:</span> <a class="border" style="color:var(--link-color);" href="?do=category&id=<?php echo $article['cat_id']?>"><?php echo getCatName($article['cat_id']) ?></a></div>
 		<div class="actions">
-			<center><small><i>This article was viewed <?php echo $newViewCount.($newViewCount==1?' time':'times') ?></i></small></center>
+			<center><small><i>This article was viewed <?php echo $newViewCount.($newViewCount==1?' time':' times') ?></i></small></center>
 			<ul>
 				<li><a title="Go back" href="./" class="border">Go Back</a></li>
 				<li><span title="Delete this article" onclick="<?php echo "deleteArticle('{$article['id']}','{$article['article_title']}')" ?>" class="link border" style="color: crimson">Delete</a></li>

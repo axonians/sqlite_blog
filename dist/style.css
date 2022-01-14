@@ -31,6 +31,10 @@ h3 { text-transform: uppercase; color: var(--link-color); font-weight: 800; }
 #add_new input[type="submit"] { cursor: pointer; }
 #add_new textarea { background: #eee; resize: none; }
 
+#search input { padding: 0.25rem 0.5rem; font-size: 1.05rem; }
+.search_result p.search_content { display: inline-block; margin: 0.5rem; }
+.results{ display: block; color: var(--link-color); font-style: italic; font-size: 88%; }
+
 .article_content { max-width: 600px; }
 .article_content div { margin-block: 0.75rem; color: var(--text-color); }
 .article_content .title #title { font-size: 1.85rem; font-weight: 700; color: var(--link-color); }
@@ -61,11 +65,15 @@ img.markUp { display: block; }
 span.markUp_caption { display: block; color: var(--link-color); font-style: italic; font-size: 88%; }
 
 @media only screen and (max-width: 600px) {
-	#add_new label{ margin-left: -2rem; }
-  #add_new input,#add_new textarea,#add_new select { margin-left: -2rem; width: calc(100% + 4rem); }
-	img.markUp { width: calc(100%); }
+	#add_new label { margin-left: -2rem; }
+  #add_new input,#add_new textarea,#add_new select { margin-left: -2rem; width: calc(100% + 4rem);}
+	img.markUp { width: 100%; }
+	.search_result { max-width: 100%; }
+	.content_holder { max-width: 100%; }
 }
 @media only screen and (min-width: 600px) {
   #add_new input,#add_new textarea,#add_new select { min-width: 480px; }
   img.markUp { width: 600px; }
+	.search_result{ width: 480px; }
+	.content_holder { width: 600px; }
 }
